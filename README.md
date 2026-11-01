@@ -58,11 +58,6 @@ Import `postman/post-api.postman_collection.json` and run requests 1 to 8 in ord
 (Register, Login, Create Post, Get All, Get One, Update, Delete, Logout).
 Full request and response details are in [docs/API.md](docs/API.md).
 
-## Screenshots
-Add your Postman and Atlas screenshots to `docs/screenshots/` and link them here:
-
-![Postman requests](docs/screenshots/postman.png)
-![MongoDB Atlas data](docs/screenshots/atlas.png)
 
 ## Author
 Piyush - B.Tech CSE, BML Munjal University
