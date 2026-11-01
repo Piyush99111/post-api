@@ -1,0 +1,25 @@
+{
+  "info": { "name": "Post API", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "variable": [
+    { "key": "base", "value": "http://localhost:3000" },
+    { "key": "postId", "value": "PASTE_POST_ID_HERE" }
+  ],
+  "item": [
+    { "name": "1 Register", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+      "url": "{{base}}/api/auth/register",
+      "body": { "mode": "raw", "raw": "{\n  \"username\": \"piyush\",\n  \"email\": \"piyush@example.com\",\n  \"password\": \"secret123\"\n}" } } },
+    { "name": "2 Login (sets cookie)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+      "url": "{{base}}/api/auth/login",
+      "body": { "mode": "raw", "raw": "{\n  \"email\": \"piyush@example.com\",\n  \"password\": \"secret123\"\n}" } } },
+    { "name": "3 Create Post", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+      "url": "{{base}}/api/posts",
+      "body": { "mode": "raw", "raw": "{\n  \"title\": \"My first post\",\n  \"content\": \"Hello from Express and MongoDB\"\n}" } } },
+    { "name": "4 Get All Posts", "request": { "method": "GET", "url": "{{base}}/api/posts" } },
+    { "name": "5 Get One Post", "request": { "method": "GET", "url": "{{base}}/api/posts/{{postId}}" } },
+    { "name": "6 Update Post (PATCH)", "request": { "method": "PATCH", "header": [{ "key": "Content-Type", "value": "application/json" }],
+      "url": "{{base}}/api/posts/{{postId}}",
+      "body": { "mode": "raw", "raw": "{\n  \"title\": \"Edited title\"\n}" } } },
+    { "name": "7 Delete Post", "request": { "method": "DELETE", "url": "{{base}}/api/posts/{{postId}}" } },
+    { "name": "8 Logout", "request": { "method": "POST", "url": "{{base}}/api/auth/logout" } }
+  ]
+}
